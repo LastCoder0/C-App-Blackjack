@@ -17,13 +17,18 @@ namespace Blackjack
             InitializeComponent();
         }
         int  kurpiernum = 0;
-        int  gamernum= 0;
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            blackjack.Text = "Good Luck";
+            blackjack1.Text = "Good Luck";
+            blackjack.ForeColor = Color.Gray;
+            blackjack1.ForeColor = Color.Gray;
+            btnHit.Visible = true ;
+
+
             i = 1;
             kurpiernum = 0;
-            int gamernum = 0;
             GamerKolon3.Image = Image.FromFile(Application.StartupPath + "\\background.jpg");
             GamerKolon4.Image = Image.FromFile(Application.StartupPath + "\\background.jpg");
 
@@ -32,24 +37,25 @@ namespace Blackjack
             GamerStart();
             //Oyuncu Kısmındaki kağıtlar
             i = 1;
+           
+
 
         }
         public void KurpierStart()
         {
           
             Random rastgele = new Random();
-            int sayi1 = rastgele.Next(1, 13);
-            int sayi2 = rastgele.Next(1, 13);
+            int sayi1 = rastgele.Next(2, 14);
+            
+           
+           
             KurpierKolon1.SizeMode = PictureBoxSizeMode.StretchImage;
             KurpierKolon2.SizeMode = PictureBoxSizeMode.StretchImage;
             KurpierKolon2.Image = Image.FromFile(Application.StartupPath + "\\blackjackdefault.png");
 
             switch (sayi1)
             {
-                case 1:
-                    KurpierKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
-                    kurpiernum = kurpiernum + 10;
-                    break;
+              
                 case 2:
                     KurpierKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca2.png");
                     kurpiernum = kurpiernum + 2;
@@ -102,6 +108,10 @@ namespace Blackjack
                     KurpierKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
                     kurpiernum = kurpiernum + 10;
                     break;
+                case 14:
+                    KurpierKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
+                    kurpiernum = kurpiernum + 11;
+                    break;
                 default:
                     Console.WriteLine("Default case");
                    break;
@@ -109,150 +119,184 @@ namespace Blackjack
             KurpierKolon2.Image = Image.FromFile(Application.StartupPath + "\\blackjackdefault.png");
 
             kurpierCount.Text = kurpiernum.ToString();
-
+     
+            
             
 
         }
   public void GamerStart()
         {
+
             int gamernum = 0;
             Random rastgele = new Random();
-            int sayi1 = rastgele.Next(1, 13);
-            int sayi2 = rastgele.Next(1, 13);
+            int sayi1 = rastgele.Next(2, 14);
+            int sayi2 = rastgele.Next(2, 14);
             GamerKolon1.SizeMode = PictureBoxSizeMode.StretchImage;
             GamerKolon2.SizeMode = PictureBoxSizeMode.StretchImage;
-            switch (sayi1)
-        {
-            case 1:
-                GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
-                    gamernum = gamernum + 10;
-                break;
-            case 2:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca2.png");
-                    gamernum = gamernum + 2;
-                break;
-            case 3:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca3.png");
-                    gamernum = gamernum + 3;
+          
 
-                break;
-            case 4:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca4.png");
-                    gamernum = gamernum + 4;
 
-                break;
-            case 5:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca5.png");
-                    gamernum = gamernum + 5;
+                switch (sayi1)
+                {
+                    
+                    case 2:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca2.png");
+                        gamernum = gamernum + 2;
+                        break;
+                    case 3:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca3.png");
+                        gamernum = gamernum + 3;
 
-                break;
-            case 6:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca6.png");
-                    gamernum = gamernum + 6;
+                        break;
+                    case 4:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca4.png");
+                        gamernum = gamernum + 4;
 
-                break;
-            case 7:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca7.png");
-                    gamernum = gamernum + 7;
-                break;
-            case 8:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca8.png");
-                    gamernum = gamernum + 8;
-                break;
-            case 9:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca9.png");
-                    gamernum = gamernum + 9;
-                break;
-            case 10:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca10.png");
-                    gamernum = gamernum + 10;
-                break;
-            case 11:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\macabacak.png");
-                    gamernum = gamernum + 10;
-                break;
-            case 12:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
-                    gamernum = gamernum + 10;
-                break;
-            case 13:
-                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
-                    gamernum = gamernum + 10;
-                break;
-            default:
-                Console.WriteLine("Default case");
-                break;
-        }
-            switch (sayi2)
-            {
-                case 1:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
-                    gamernum = gamernum + 10;
-                    break;
-                case 2:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca2.png");
-                    gamernum = gamernum + 2;
-                    break;
-                case 3:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca3.png");
-                    gamernum = gamernum + 3;
+                        break;
+                    case 5:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca5.png");
+                        gamernum = gamernum + 5;
 
-                    break;
-                case 4:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca4.png");
-                    gamernum = gamernum + 4;
+                        break;
+                    case 6:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca6.png");
+                        gamernum = gamernum + 6;
 
-                    break;
-                case 5:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca5.png");
-                    gamernum = gamernum + 5;
-
-                    break;
-                case 6:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca6.png");
-                    gamernum = gamernum + 6;
-
-                    break;
-                case 7:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca7.png");
-                    gamernum = gamernum + 7;
-                    break;
-                case 8:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca8.png");
-                    gamernum = gamernum + 8;
-                    break;
-                case 9:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca9.png");
-                    gamernum = gamernum + 9;
-                    break;
-                case 10:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca10.png");
-                    gamernum = gamernum + 10;
-                    break;
-                case 11:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\macabacak.png");
-                    gamernum = gamernum + 10;
-                    break;
-                case 12:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
-                    gamernum = gamernum + 10;
-                    break;
-                case 13:
-                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
-                    gamernum = gamernum + 10;
+                        break;
+                    case 7:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca7.png");
+                        gamernum = gamernum + 7;
+                        break;
+                    case 8:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca8.png");
+                        gamernum = gamernum + 8;
+                        break;
+                    case 9:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca9.png");
+                        gamernum = gamernum + 9;
+                        break;
+                    case 10:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca10.png");
+                        gamernum = gamernum + 10;
+                        break;
+                    case 11:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\macabacak.png");
+                        gamernum = gamernum + 10;
+                        break;
+                    case 12:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
+                        gamernum = gamernum + 10;
+                        break;
+                    case 13:
+                        GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
+                        gamernum = gamernum + 10;
+                        break;
+                case 14:
+                    GamerKolon1.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
+                    gamernum = gamernum + 11;
                     break;
                 default:
-                    Console.WriteLine("Default case");
+                        Console.WriteLine("Default case");
+                        break;
+                }
+           
+                switch (sayi2)
+                {
+                    
+                    case 2:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca2.png");
+                        gamernum = gamernum + 2;
+                        break;
+                    case 3:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca3.png");
+                        gamernum = gamernum + 3;
+
+                        break;
+                    case 4:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca4.png");
+                        gamernum = gamernum + 4;
+
+                        break;
+                    case 5:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca5.png");
+                        gamernum = gamernum + 5;
+
+                        break;
+                    case 6:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca6.png");
+                        gamernum = gamernum + 6;
+
+                        break;
+                    case 7:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca7.png");
+                        gamernum = gamernum + 7;
+                        break;
+                    case 8:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca8.png");
+                        gamernum = gamernum + 8;
+                        break;
+                    case 9:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca9.png");
+                        gamernum = gamernum + 9;
+                        break;
+                    case 10:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca10.png");
+                        gamernum = gamernum + 10;
+                        break;
+                    case 11:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\macabacak.png");
+                        gamernum = gamernum + 10;
+                        break;
+                    case 12:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
+                        gamernum = gamernum + 10;
+                        break;
+                    case 13:
+                        GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\macapapaz.png");
+                        gamernum = gamernum + 10;
+                        break;
+                case 14:
+                    GamerKolon2.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
+                    gamernum = gamernum + 11;
                     break;
+                default:
+                        Console.WriteLine("Default case");
+                        break;
+                }
+            int yirmibir = sayi1 + sayi2;
+            if(yirmibir==21)
+            {
+                gamerCount.Text = "21";
+                blackjack.Text = "Gamer Wins";
+                blackjack1.Text = "Kurpier Lost";
+                btnHit.Visible = false;
+                MessageBox.Show(" 21 değerine ulaştın tebrikler");
+
+                blackjack.ForeColor = Color.Green;
+
+                
+            }
+            else
+            {
+                gamerCount.Text = gamernum.ToString();
+
             }
 
-            gamerCount.Text = gamernum.ToString();
-
+         
 
         }
         int i = 1;
         private void Button2_Click(object sender, EventArgs e)
         {
+            if (gamerCount.Text == "21")
+            {
+                MessageBox.Show("Game is 21 already");
+               
+
+            }
+            else
+            {
+
             if (i == 1)
             {
                 Hit();
@@ -261,6 +305,9 @@ namespace Blackjack
             {
                 HitSecond();
                
+            }
+
+
             }
           
             i++;
@@ -274,17 +321,13 @@ namespace Blackjack
     {
             int gamernum1 = Convert.ToInt32(gamerCount.Text);
         Random rastgele = new Random();
-        int sayi1 = rastgele.Next(1, 13);
+        int sayi1 = rastgele.Next(2, 14);
             GamerKolon3.SizeMode = PictureBoxSizeMode.StretchImage;
            
             switch (sayi1)
             {
                  
-                case 1:
-                    GamerKolon3.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
-                    gamernum1 = gamernum1 + 10;
-
-                    break;
+               
                 case 2:
                     GamerKolon3.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca2.png");
                     gamernum1 = gamernum1 + 2;
@@ -334,16 +377,42 @@ namespace Blackjack
                     gamernum1 = gamernum1 + 10;
                     break;
                 case 13:
-                    GamerKolon3.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
+                    GamerKolon3.Image = Image.FromFile(Application.StartupPath + "\\maca\\macapapaz.png");
                     gamernum1 = gamernum1 + 10;
+                    break;
+                case 14:
+                    GamerKolon3.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
+                    gamernum1 = gamernum1 + 11;
+
                     break;
                 default:
                     Console.WriteLine("Default case");
                     break;
             }
-            gamerCount.Text = gamernum1.ToString();
+            int yirmibir = gamernum1;
+            if (yirmibir == 21)
+            {
+                gamerCount.Text = "21";
+                blackjack.Text = "Gamer Wins";
+                blackjack1.Text = "Kurpier Lost";
 
+                blackjack.ForeColor = Color.Green;
+               
+            }
+            else if (yirmibir > 21)
+            {
+                blackjack1.Text = "Gamer Busted";
+                blackjack.Text = "Busted";
+                blackjack1.ForeColor = Color.Green;
+                blackjack.ForeColor = Color.Red;
+                gamerCount.Text = gamernum1.ToString();
 
+            }
+            else
+            {
+                gamerCount.Text = gamernum1.ToString();
+
+            }
 
 
         }
@@ -351,15 +420,12 @@ namespace Blackjack
         {
             int gamernum1 = Convert.ToInt32(gamerCount.Text);
             Random rastgele = new Random();
-            int sayi2 = rastgele.Next(1, 13);
+            int sayi2 = rastgele.Next(2, 14);
 
                 GamerKolon4.SizeMode = PictureBoxSizeMode.StretchImage;
                 switch (sayi2)
                 {
-                    case 1:
-                        GamerKolon4.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
-                    gamernum1 = gamernum1 + 10;
-                        break;
+                   
                     case 2:
                         GamerKolon4.Image = Image.FromFile(Application.StartupPath + "\\maca\\maca2.png");
                     gamernum1 = gamernum1 + 2;
@@ -412,11 +478,40 @@ namespace Blackjack
                         GamerKolon4.Image = Image.FromFile(Application.StartupPath + "\\maca\\macakız.png");
                     gamernum1 = gamernum1 + 10;
                         break;
-                    default:
+                case 14:
+                    GamerKolon4.Image = Image.FromFile(Application.StartupPath + "\\maca\\as.png");
+                    gamernum1 = gamernum1 + 11;
+                    break;
+                default:
                         Console.WriteLine("Default case");
                         break;
                 }
-            gamerCount.Text = gamernum1.ToString();
+            int yirmibir = gamernum1;
+            if (yirmibir == 21)
+            {
+                gamerCount.Text = "21";
+                blackjack.Text = "Gamer Wins";
+                blackjack1.Text = "Kurpier Lost";
+                blackjack.ForeColor = Color.Green;
+
+
+            }
+            else if(yirmibir>21)
+            {
+                blackjack1.Text = "Gamer Busted";
+                blackjack.Text = "Busted";
+
+                blackjack1.ForeColor = Color.Green;
+                blackjack.ForeColor = Color.Red;
+                gamerCount.Text = gamernum1.ToString();
+
+            }
+            else
+            {
+                gamerCount.Text = gamernum1.ToString();
+
+            }
+           
         }
            
 
