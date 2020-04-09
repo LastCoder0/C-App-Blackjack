@@ -8,3 +8,13 @@ C:\Users\Cihat\source\repos\CSharpCourse\Blackjack\obj\Debug\Blackjack.csproj.Ge
 C:\Users\Cihat\source\repos\CSharpCourse\Blackjack\obj\Debug\Blackjack.csproj.CoreCompileInputs.cache
 C:\Users\Cihat\source\repos\CSharpCourse\Blackjack\obj\Debug\Blackjack.exe
 C:\Users\Cihat\source\repos\CSharpCourse\Blackjack\obj\Debug\Blackjack.pdb
+C:\Users\Cihat\source\repos\Blackjack\bin\Debug\Blackjack.exe.config
+C:\Users\Cihat\source\repos\Blackjack\bin\Debug\Blackjack.exe
+C:\Users\Cihat\source\repos\Blackjack\bin\Debug\Blackjack.pdb
+C:\Users\Cihat\source\repos\Blackjack\obj\Debug\Blackjack.csprojAssemblyReference.cache
+C:\Users\Cihat\source\repos\Blackjack\obj\Debug\Blackjack.Form1.resources
+C:\Users\Cihat\source\repos\Blackjack\obj\Debug\Blackjack.Properties.Resources.resources
+C:\Users\Cihat\source\repos\Blackjack\obj\Debug\Blackjack.csproj.GenerateResource.cache
+C:\Users\Cihat\source\repos\Blackjack\obj\Debug\Blackjack.csproj.CoreCompileInputs.cache
+C:\Users\Cihat\source\repos\Blackjack\obj\Debug\Blackjack.exe
+C:\Users\Cihat\source\repos\Blackjack\obj\Debug\Blackjack.pdb
