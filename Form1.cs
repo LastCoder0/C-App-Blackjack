@@ -16,11 +16,14 @@ namespace Blackjack
         public Form1()
         {
             InitializeComponent();
+            btnHit.Visible = false;
+            btnStand.Visible = false;
         }
         string oyuncubusted;
         int  kurpiernum = 0;
         int kurpiercip = 1000;
         int oyuncucip = 1000;
+       
         private void Button1_Click(object sender, EventArgs e)
         {
             kurpiercip = kurpiercip - 50;
@@ -709,7 +712,8 @@ namespace Blackjack
                 Stand();
                 if (Convert.ToInt32(kurpierCount.Text) == 21)
                 {
-                    
+                    oyuncubusted = "busted";
+
                 }
                 else if (Convert.ToInt32(kurpierCount.Text) >= 17)
                 {
@@ -804,13 +808,11 @@ namespace Blackjack
             }
           else  if (oyuncubusted == "busted")
             {
-                MessageBox.Show("Kurpiyer Kazandi");
 
                 kurpiercip += 100;
             }
             else
             {
-                MessageBox.Show("Oyuncu Kazandi");
 
                 oyuncucip += 100;
             }
